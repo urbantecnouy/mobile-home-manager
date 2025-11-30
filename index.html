@@ -63,10 +63,12 @@
             .sidebar { display: none; }
             .mobile-nav { display: flex !important; }
             .main-content { margin-left: 0 !important; }
+            .content-area { margin-left: 0 !important; }
         }
         .mobile-nav { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid #e5e5e5; z-index: 50; }
         .mobile-nav button { flex: 1; padding: 8px; text-align: center; font-size: 11px; color: #666; background: none; border: none; cursor: pointer; }
         .mobile-nav button.active { color: #007AFF; }
+        .content-area { margin-left: 200px; }
         .action-bar { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; }
         .search-input { max-width: 250px; }
     </style>
@@ -759,7 +761,7 @@
                             <div className={`sidebar-item ${tab === 'settings' ? 'active' : ''}`} onClick={() => setTab('settings')}><Icon name="settings" size={18} /> Settings</div>
                         </nav>
                     </div>
-                    <div className="flex-1 p-4 pb-20 md:pb-4" style={{ marginLeft: '200px' }}>
+                    <div className="flex-1 p-4 pb-20 md:pb-4 content-area">
                         {tab === 'dashboard' && <Dashboard store={store} />}
                         {tab === 'properties' && <Properties store={store} currentUser={currentUser} />}
                         {tab === 'payments' && <Payments store={store} currentUser={currentUser} />}
